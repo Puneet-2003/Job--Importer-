@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Consider updating to "es6" or "esnext" for modern features
+    "lib": ["dom", "dom.iterable", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true, // Skips type checking of declaration files
+    "strict": true, // Enables all strict type-checking options
+    "noEmit": true, // Prevents emitting compiled files
+    "esModuleInterop": true, // Allows default imports from CommonJS modules
+    "module": "esnext", // Use ESNext module system
+    "moduleResolution": "node", // Resolves modules in Node.js style
+    "resolveJsonModule": true, // Allows importing JSON files
+    "isolatedModules": true, // Ensures each file is treated as a module
+    "jsx": "preserve", // Keeps JSX as-is for further processing by Next.js
+    "incremental": true, // Enables incremental compilation
+    "plugins": [
+      {
+        "name": "next" // Next.js-specific TypeScript plugin
+      }
+    ],
+    "baseUrl": ".", // Base directory for module resolution
+    "paths": {
+      "@/*": ["./src/*"], // Alias for the `src` directory
+      "@/types": ["./types/index.ts"], // Alias for the `types` directory
+      "@/services/*": ["./services/*"] // Alias for the `services` directory
+    }
+  },
+  "include": [
+    "next-env.d.ts", // Next.js environment types
+    "**/*.ts", // Include all TypeScript files
+    "**/*.tsx", // Include all TypeScript React files
+    ".next/types/**/*.ts" // Include Next.js types
+  ],
+  "exclude": [
+    "node_modules" // Exclude dependencies
+  ]
+}
